@@ -9,9 +9,14 @@ import { EmployeeService } from './employee.service';
 export class AppComponent {
   title = 'app';
   employees = [];
-    constructor(private _employeeService: EmployeeService ){}
+    //constructor(private _employeeService: EmployeeService ){}
+    constructor(
+        private employeeService: EmployeeService) {
+        
+    }
     ngOnInit(){
-        this._employeeService.getEmployees().subscribe(resEmpData => this.employees = resEmpData);
-        console.log(employees);
+       console.log('hi'); 
+      this.employeeService.getEmployees().subscribe(resEmpData => {this.employees = resEmpData; console.log(resEmpData);});
+        console.log(this.employees);
     }
 }

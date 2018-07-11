@@ -11,7 +11,7 @@ import { Observable } from 'rxjs/Observable';
 })
 export class EmployeeService {
 
-  private _url: string = "apidata/employeedata.json";
+  private _url: string = "./assets/data/api/employeedata.json";
   constructor(private _http: Http) { }
   getEmployees(){
     return this._http.get(this._url).map((response:Response) => response.json());
